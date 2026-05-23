@@ -25,3 +25,16 @@ def delete_contact():
         print ("Contact deleted successfully")
     else:
         print ("Contact not found")
+
+def view_contacts():
+    if not contacts:
+        print ("No contacts found")
+        return
+    for name, number in contacts.items():
+        print (f"Name: {name}, Phone: {number}")
+        print (f"Total contacts: {len(contacts)}")
+
+    add_contact()
+    add_contact()
+    add_contact()
+view_contacts()
