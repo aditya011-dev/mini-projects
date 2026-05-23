@@ -3,48 +3,38 @@ contacts = {}
 def add_contact():
     name   = input("Enter name: ")
     number = input("Enter phone: ")
-
     if name in contacts:
         print(f"{name} already exists! ❌")
         return
-
     contacts[name] = number
     print(f"{name} added successfully! ✅")
 
-
 def search_contact():
     name = input("Enter name to search: ")
-
     if name in contacts:
         print(f"Name:   {name}")
         print(f"Number: {contacts[name]}")
     else:
         print(f"{name} not found ❌")
 
-
 def delete_contact():
     name = input("Enter name to delete: ")
-
     if name not in contacts:
         print(f"{name} not found ❌")
         return
-
     del contacts[name]
     print(f"{name} deleted successfully! ✅")
-
 
 def view_all():
     if len(contacts) == 0:
         print("No contacts yet! ❌")
         return
-
     print("\n📱 All Contacts:")
     print("─" * 25)
     for name, number in contacts.items():
         print(f"{name} → {number}")
     print("─" * 25)
     print(f"Total contacts: {len(contacts)}")
-
 
 def main():
     while True:
@@ -56,9 +46,7 @@ def main():
         print("4. View all contacts")
         print("5. Exit")
         print("─" * 25)
-
         choice = input("Choose option: ")
-
         if choice == "1":
             add_contact()
         elif choice == "2":
@@ -72,6 +60,5 @@ def main():
             break
         else:
             print("Invalid option! Pick 1-5 ❌")
-
 
 main()
