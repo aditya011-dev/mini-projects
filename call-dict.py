@@ -10,6 +10,18 @@ def add_contact():
     contacts[name]= number
     print ("Contact added successfully")
 
-add_contact()
-add_contact()
-print (contacts)    #checking if the contact is added or not
+def search_contact():
+    name = input("Enter name to search:")
+    if name in contacts:
+        print (f"Name: {name}")
+        print (f"Phone: {contacts[name]}")
+    else:
+        print ("Contact not found")
+         
+def delete_contact():
+    name = input("Enter name to delete:")
+    if name in contacts:
+        del contacts[name]
+        print ("Contact deleted successfully")
+    else:
+        print ("Contact not found")
